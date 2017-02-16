@@ -8,19 +8,19 @@
 1. Script that gets the [lead article] with following [attributes] from these [7 newspapers].
 
 ## Newspapers
+- ~~http://www.lemonde.fr~~
 - https://www.nzz.ch
 - https://www.repubblica.it
 - https://www.theguardian.com
 - http://elpais.com
-- http://www.lemonde.fr
 - https://www.nytimes.com
 - http://www.dailymail.co.uk
 
 ## Attributes
 - Headline
-- Headline Image
 - Lead Text
 - Link to the main Article
+- Headline Image
 
 2. Ability to write these attributes into a Database
 
