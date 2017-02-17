@@ -3,13 +3,13 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
-require_relative '../lib/crawler'
+require_relative '../lib/ecco'
 
 module Ecco
   class CrawlerTest < Minitest::Test
     def test_le_monde
       crawler = Crawler.new(:lemonde)
-      site_data = crawler.get_data
+      site_data = crawler.crawl
 
       assert_kind_of Ecco::SiteData, site_data
       assert_kind_of String, site_data.headline
@@ -20,14 +20,13 @@ module Ecco
 
     def test_nzz
       crawler = Crawler.new(:nzz)
-      site_data = crawler.get_data
+      site_data = crawler.crawl
 
       assert_kind_of Ecco::SiteData, site_data
       assert_kind_of String, site_data.headline
       assert_kind_of String, site_data.description
       assert_kind_of URI, site_data.link
       assert_kind_of URI, site_data.image_url
-      puts site_data.inspect
     end
   end
 end
