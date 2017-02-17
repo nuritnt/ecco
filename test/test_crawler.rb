@@ -5,19 +5,17 @@ Minitest::Reporters.use!
 
 require_relative '../lib/crawler'
 
-
 module Ecco
   class CrawlerTest < Minitest::Test
-
     def test_le_monde
       crawler = Crawler.new(:lemonde)
-      data = crawler.get_data
+      site_data = crawler.get_data
 
-      assert_kind_of Ecco::LemondeAdapter, data
-      assert_kind_of String, data.headline
-      assert_kind_of String, data.description
-      assert_kind_of URI, data.link
-      assert_kind_of URI, data.image_url
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      assert_kind_of URI, site_data.image_url
     end
   end
 end

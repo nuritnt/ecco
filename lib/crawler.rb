@@ -4,6 +4,7 @@ require 'curb'
 require 'nokogiri'
 
 module Ecco
+  # JOB: Get website data using a specific adapter.
   class Crawler
     attr_reader :adapter
 
@@ -19,30 +20,44 @@ module Ecco
     end
   end
 
+  # JOB: Represent Site Data that we need.
   class SiteData
     attr_reader :headline, :description, :link, :image_url
 
-    private
+    def initialize(args)
+      @headline     = args[:headline]
+      @description  = args[:description]
+      @link         = args[:link]
+      @image_url    = args[:image_url]
+    end
+  end
 
+  # JOB: Provide common adapter methods
+  class Adapter
+    private
     def get_html(url)
       html_body = Curl.get(url).body_str
       Nokogiri::HTML(html_body)
     end
   end
 
-  class LemondeAdapter < SiteData
-    ROOT_URI = 'http://www.lemonde.fr'.freeze
+  # JOB: Parse the actual website data
+  class LemondeAdapter < Adapter
+    ROOT_URI = 'http://www.lemonde.fr'
+
+    attr_reader :article_block
+
+    def initialize
+      @article_block = get_html(ROOT_URI).css('.titre_une')
+    end
 
     def data
-      lemonde = get_html(ROOT_URI)
-      main_article_block = lemonde.css('.titre_une')
-
-      @headline = main_article_block.css('h1').inner_text
-      @description = main_article_block.css('.description').inner_text
-      @link = URI.parse(ROOT_URI + main_article_block.css('a').first.attr('href'))
-      @image_url = URI.parse(main_article_block.css('img').first.attr('src'))
-
-      return self
+      SiteData.new(
+        headline: article_block.css('.tt3').inner_text,
+        description: article_block.css('.description').inner_text,
+        link: URI.parse(ROOT_URI + article_block.css('a').first.attr('href')),
+        image_url: URI.parse(article_block.css('img').first.attr('src'))
+      )
     end
   end
 end
