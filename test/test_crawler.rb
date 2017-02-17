@@ -17,5 +17,17 @@ module Ecco
       assert_kind_of URI, site_data.link
       assert_kind_of URI, site_data.image_url
     end
+
+    def test_nzz
+      crawler = Crawler.new(:nzz)
+      site_data = crawler.get_data
+
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      assert_kind_of URI, site_data.image_url
+      puts site_data.inspect
+    end
   end
 end

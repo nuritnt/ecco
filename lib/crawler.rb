@@ -12,6 +12,8 @@ module Ecco
       case adapter
       when :lemonde
         @adapter = LemondeAdapter.new
+      when :nzz
+        @adapter = NZZAdapter.new
       end
     end
 
@@ -34,6 +36,8 @@ module Ecco
 
   # JOB: Provide common adapter methods
   class Adapter
+    attr_reader :article_block, :root_uri
+
     private
     def get_html(url)
       html_body = Curl.get(url).body_str
@@ -41,22 +45,36 @@ module Ecco
     end
   end
 
-  # JOB: Parse the actual website data
+  # JOB: Parse the actual website data of LeMonde
   class LemondeAdapter < Adapter
-    ROOT_URI = 'http://www.lemonde.fr'
-
-    attr_reader :article_block
-
     def initialize
-      @article_block = get_html(ROOT_URI).css('.titre_une')
+      @root_uri = 'http://www.lemonde.fr'
+      @article_block = get_html(root_uri).css('.titre_une')
     end
 
     def data
       SiteData.new(
         headline: article_block.css('.tt3').inner_text,
         description: article_block.css('.description').inner_text,
-        link: URI.parse(ROOT_URI + article_block.css('a').first.attr('href')),
+        link: URI.parse(root_uri + article_block.css('a').first.attr('href')),
         image_url: URI.parse(article_block.css('img').first.attr('src'))
+      )
+    end
+  end
+
+  # JOB: Parse the actual website data of NZZ
+  class NZZAdapter < Adapter
+    def initialize
+      @root_uri =  'https://www.nzz.ch'
+      @article_block = get_html(root_uri).css('.teaser--medium').first
+    end
+
+    def data
+      SiteData.new(
+        headline: article_block.css('.title__name').inner_text,
+        description: article_block.css('.teaser__lead').inner_text,
+        link: URI.parse(root_uri + article_block.css('.teaser__link').first.attr('href')),
+        image_url: URI.parse(article_block.css('img').attr('data-srcset').value.slice!(/http[^\s]{1,}.jpeg/))
       )
     end
   end
