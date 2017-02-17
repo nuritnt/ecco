@@ -40,4 +40,4 @@ end
 # pinding.pry
 get_lemonde_data
 get_nzz_data
-puts 'finito.'
+puts 'finito.basta.ecco.'
