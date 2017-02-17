@@ -1,5 +1,7 @@
 module Ecco
   class GuardianAdapter < Adapter
+    attr_reader :page_block
+
     def initialize
       @root_uri = 'https://www.theguardian.com/international'
       @article_block =
