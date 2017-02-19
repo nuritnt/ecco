@@ -49,7 +49,18 @@ module Ecco
       assert_kind_of String, site_data.description
       assert_kind_of URI, site_data.link
       assert_kind_of URI, site_data.image_url
-
     end
+
+    def test_daily_mail
+      crawler = Crawler.new(:dailymail)
+      site_data = crawler.crawl
+
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      assert_kind_of URI, site_data.image_url
+    end
+
   end
 end
