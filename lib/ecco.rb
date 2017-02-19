@@ -10,6 +10,7 @@ require_relative 'ecco/adapter.rb'
 require_relative 'ecco/adapters/lemonde.rb'
 require_relative 'ecco/adapters/nzz.rb'
 require_relative 'ecco/adapters/guardian.rb'
+require_relative 'ecco/adapters/repubblica.rb'
 
 module Ecco
 end
