@@ -7,29 +7,29 @@ require_relative '../lib/ecco'
 
 module Ecco
   class CrawlerTest < Minitest::Test
-    def test_le_monde
-      crawler = Crawler.new(:lemonde)
-      site_data = crawler.crawl
+    # def test_le_monde
+    #   crawler = Crawler.new(:lemonde)
+    #   site_data = crawler.crawl
+    #
+    #   assert_kind_of Ecco::SiteData, site_data
+    #   assert_kind_of String, site_data.headline
+    #   assert_kind_of String, site_data.description
+    #   assert_kind_of URI, site_data.link
+    #   assert_kind_of URI, site_data.image_url
+    # end
+    #
+    # def test_nzz
+    #   crawler = Crawler.new(:nzz)
+    #   site_data = crawler.crawl
+    #
+    #   assert_kind_of Ecco::SiteData, site_data
+    #   assert_kind_of String, site_data.headline
+    #   assert_kind_of String, site_data.description
+    #   assert_kind_of URI, site_data.link
+    #   assert_kind_of URI, site_data.image_url
+    # end
 
-      assert_kind_of Ecco::SiteData, site_data
-      assert_kind_of String, site_data.headline
-      assert_kind_of String, site_data.description
-      assert_kind_of URI, site_data.link
-      assert_kind_of URI, site_data.image_url
-    end
-
-    def test_nzz
-      crawler = Crawler.new(:nzz)
-      site_data = crawler.crawl
-
-      assert_kind_of Ecco::SiteData, site_data
-      assert_kind_of String, site_data.headline
-      assert_kind_of String, site_data.description
-      assert_kind_of URI, site_data.link
-      assert_kind_of URI, site_data.image_url
-    end
-
-    def elpais
+    def test_elpais
       crawler = Crawler.new(:elpais)
       site_data = crawler.crawl
 
@@ -40,7 +40,7 @@ module Ecco
       assert_kind_of URI, site_data.image_url
     end
 
-    def nyt
+    def test_nyt
       crawler = Crawler.new(:nyt)
       site_data = crawler.crawl
 
@@ -48,7 +48,7 @@ module Ecco
       assert_kind_of String, site_data.headline
       assert_kind_of String, site_data.description
       assert_kind_of URI, site_data.link
-      assert_kind_of URI, site_data.image_url
+      # assert_kind_of URI, site_data.image_url
     end
 
   end

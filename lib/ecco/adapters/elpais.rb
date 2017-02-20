@@ -1,7 +1,7 @@
 module Ecco
   class ElpaisAdapter < Adapter
     def initialize
-      @root_uri = 'http://www.elpais.com'
+      @root_uri = 'elpais.com'
       @article_block = get_html(root_uri).css('.articulo.articulo--primero')
     end
 
