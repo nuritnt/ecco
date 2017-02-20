@@ -9,7 +9,7 @@ Simply [fork](https://github.com/therod/ecco#fork-destination-box) this project,
 - [x] http://www.lemonde.fr
 - [x] https://www.nzz.ch
 - [ ] https://www.repubblica.it
-- [ ] https://www.theguardian.com
+- [x] https://www.theguardian.com
 - [ ] http://elpais.com
 - [ ] https://www.nytimes.com
 - [ ] http://www.dailymail.co.uk
