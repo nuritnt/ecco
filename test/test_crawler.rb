@@ -28,5 +28,28 @@ module Ecco
       assert_kind_of URI, site_data.link
       assert_kind_of URI, site_data.image_url
     end
+
+    def elpais
+      crawler = Crawler.new(:elpais)
+      site_data = crawler.crawl
+
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      assert_kind_of URI, site_data.image_url
+    end
+
+    def nyt
+      crawler = Crawler.new(:nyt)
+      site_data = crawler.crawl
+
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      assert_kind_of URI, site_data.image_url
+    end
+
   end
 end
