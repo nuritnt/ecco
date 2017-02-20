@@ -52,7 +52,15 @@ module Ecco
     end
 
     def test_nyt
-      skip 'Missing implementation for image_url'
+      crawler = Crawler.new(:nyt)
+      site_data = crawler.crawl
+
+      assert_kind_of Ecco::SiteData, site_data
+      assert_kind_of String, site_data.headline
+      assert_kind_of String, site_data.description
+      assert_kind_of URI, site_data.link
+      # NOTE: No image_url because of paywall
+      # assert_kind_of URI, site_data.image_url
     end
 
     def test_elpais

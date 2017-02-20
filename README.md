@@ -11,7 +11,7 @@ Simply [fork](https://github.com/therod/ecco#fork-destination-box) this project,
 - [x] https://www.repubblica.it
 - [x] https://www.theguardian.com
 - [x] http://elpais.com
-- [ ] https://www.nytimes.com
+- [x] https://www.nytimes.com -> Missing Image due to paywall
 - [x] http://www.dailymail.co.uk
 
 ## Todo-List
