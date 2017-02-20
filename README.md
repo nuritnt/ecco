@@ -8,11 +8,11 @@ Simply [fork](https://github.com/therod/ecco#fork-destination-box) this project,
 ## Newspapers to implement
 - [x] http://www.lemonde.fr
 - [x] https://www.nzz.ch
-- [ ] https://www.repubblica.it
+- [x] https://www.repubblica.it
 - [x] https://www.theguardian.com
-- [ ] http://elpais.com
+- [x] http://elpais.com
 - [ ] https://www.nytimes.com
-- [ ] http://www.dailymail.co.uk
+- [x] http://www.dailymail.co.uk
 
 ## Todo-List
 
