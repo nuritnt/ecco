@@ -1,12 +1,11 @@
-gem 'minitest', '~> 5.4'
-require 'minitest/autorun'
-require 'minitest/reporters'
-Minitest::Reporters.use!
-
-require_relative '../lib/ecco'
+require 'test_helper'
 
 module Ecco
-  class CrawlerTest < Minitest::Test
+  class EccoTest < Minitest::Test
+    def test_that_it_has_a_version_number
+      refute_nil ::Ecco::VERSION
+    end
+
     def test_le_monde
       crawler = Crawler.new(:lemonde)
       site_data = crawler.crawl

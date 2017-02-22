@@ -1,10 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'minitest', '~> 5.4'
-gem 'minitest-reporters'
-gem 'rake'
-gem 'pry'
-gem 'curb'
-gem 'nokogiri'
-gem 'guard'
-gem 'guard-minitest'
+# Specify your gem's dependencies in ecco.gemspec
+gemspec
