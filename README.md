@@ -2,34 +2,30 @@
 
 ## How to use this project
 
+### Q: How do I add an additional adapter to this repository?
+Simply [fork](https://github.com/therod/ecco#fork-destination-box) this project, add the new adapter to your forked repository and send a new [pull-request](https://github.com/therod/ecco/compare).
 
-## Todo
+## Newspapers to implement
+- [x] http://www.lemonde.fr
+- [x] https://www.nzz.ch
+- [x] https://www.repubblica.it
+- [x] https://www.theguardian.com
+- [x] http://elpais.com
+- [x] https://www.nytimes.com -> Missing Image due to paywall
+- [x] http://www.dailymail.co.uk
 
-1. Script that gets the [lead article] with following [attributes] from these [7 newspapers].
+## Todo-List
 
-## Newspapers
-- https://www.nzz.ch
-- https://www.repubblica.it
-- https://www.theguardian.com
-- http://elpais.com
-- http://www.lemonde.fr
-- https://www.nytimes.com
-- http://www.dailymail.co.uk
+- [ ] Script that gets the [lead article] with following [attributes] from these [7 newspapers].
 
-## Attributes
-- Headline
-- Headline Image
-- Lead Text
-- Link to the main Article
+- [ ] Ability to write these attributes into a Database
 
-2. Ability to write these attributes into a Database
+- [ ] Set up the system to run every [x] hours.
 
-3. Set up the system to run every [x] hours.
+- [ ] Avoid duplicates in the database.
 
-4. Avoid duplicates in the database.
+- [ ] Write a checker to see if our script works as intended.
 
-5. Write a checker to see if our script works as intended.
+- [ ] Create a web interface
 
-6. Create a web interface
-
-7. Extend the Database to include the translated articles.
+- [ ] Extend the Database to include the translated articles.

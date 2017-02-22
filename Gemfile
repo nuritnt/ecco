@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-# Third party gems
-
-gem 'nokogiri'
+gem 'minitest', '~> 5.4'
+gem 'minitest-reporters'
+gem 'rake'
 gem 'pry'
 gem 'curb'
-
-gem 'mechanize'
+gem 'nokogiri'
+gem 'guard'
+gem 'guard-minitest'
