@@ -2,14 +2,13 @@
 
 THIS GEM IS IN ACTIVE DEVELOPMENT, DO NOT USE YET.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eccogem'
+gem 'ecco'
 ```
 
 And then execute:
@@ -18,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install eccogem
+    $ gem install ecco
 
 ## Usage
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/eccogem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nuritnt/ecco. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ### Q: How do I add an additional adapter to this repository?
 Simply [fork](https://github.com/therod/ecco#fork-destination-box) this project, add the new adapter to your forked repository and send a new [pull-request](https://github.com/therod/ecco/compare).
